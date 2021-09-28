@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkdIn</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link href="style.css"  rel="stylesheet">
+</head>
+<body>
+    <!--header starts-->
+    <div class="header">
+     
+        <div class="header_left">
+        <img src="data:image/png;base64,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" alt=""/>
+        <div class="header_search">
+            <i class="material-icons">
+                search
+            </i>
+            <input type="text" placeholder="search">
+        </div>   
+        </div>
+      <div class="header_right">
+        <div class="header_option">
+            <i class="material-icons header_option_icon">
+                home
+            </i>
+            <h3>Home</h3>
+        </div>
+        <div class="header_option ">
+            <i class="material-icons header_option_icon">
+                people
+            </i>
+            <h3>My Network</h3>
+        </div>
+        <div class="header_option">
+            <i class="material-icons header_option_icon">
+                business_center
+            </i>
+                <h3>Jobs</h3>
+        </div>
+        <div class="header_option">
+            <i class="material-icons header_option_icon">
+                sms
+            </i>
+                <h3>Messaging</h3>
+        </div>
+        <div class="header_option">
+            <i class="material-icons header_option_icon">
+                notifications
+            </i>
+            <h3>Notifications</h3>
+        </div>
+        <div class="header_option">
+            <img src="images/profile3.jpg">
+            <h3>Me</h3>
+        </div>
+        </div>
+</div>
+<!--header ends-->
+
+<!--side bar starts-->
+
+<div class="main_body">
+    <div class="sidebar">
+        <div class="sidebar_top">
+            <img src="images/backround1.png">
+            <img src="images/profile3.jpg" style="width: 60px; height: 60px; border-radius: 50%;margin-top: -30px;">
+            <h2 class="Name">Mubashira T</h2>
+            <h4>mubashirat123@gmail.com</h4>
+        </div>
+        <div class="sidebar_stats">
+            <div class="sidebar_stat">
+                <p>Who viewed your profile</p>
+                <p class="sidebar_statNumber">
+                    784
+                </p>
+            
+            </div>
+            <div class="sidebar_stat">
+                <p>Connections</p>
+                <p class="sidebar_statNumber">
+                    2,678
+                </p> 
+            </div>
+            
+        </div>
+        <div class="sidebar_bottom">
+            <p>Recent</p>
+            <div class="sidebar_recent">
+                <span class="sidebar_hash">#</span>
+                <p>reactjs</p>
+            </div>
+            <div class="sidebar_recent">
+                <span class="sidebar_hash">#</span>
+                <p>software engineering</p>
+            </div>
+            <div class="sidebar_recent">
+                <span class="sidebar_hash">#</span>
+                <p>programming</p>
+            </div>
+            <div class="sidebar_recent">
+                <span class="sidebar_hash">#</span>
+                <p>Developer</p>
+            </div>
+        </div>
+    </div>
+
+<!--side bar section ends-->
+
+<!--feed starts-->
+
+    <div class="feedSection">
+        <div class="feed_inputcontainer">
+            <div class="feed_input">
+                <div class="feed_inputprofile">
+                    <img src="images/profile3.jpg" width="35" height="35">
+                    <div class="feed_inputsearch">
+                        <form>
+                            <input type="text" placeholder="Start a post">
+                        </form>
+                    </div>
+                </div>
+            </div>
+           <div class="feed_inputoption">
+                <div class="inputoption">
+                    <i style="color:#70b5f9" class="material-icons">
+                        insert_photo
+                    </i>
+                    <h4>Photos</h4>
+                </div>
+                <div class="inputoption">
+                    <i style="color:#e7a33e" class="material-icons">
+                        smart_display
+                    </i>
+                    <h4>Videos</h4>
+                </div>
+                <div class="inputoption">
+                    <i style="color:#c0cbcd" class="material-icons">
+                        event
+                    </i>
+                    <h4>Event</h4>
+                </div>
+                <div class="inputoption">
+                    <i style="color:#7fc15e" class="material-icons">
+                        view_headline
+                    </i>
+                    <h4>Write article</h4>
+                </div>
+            </div> 
+        </div>
+
+
+        <!--post starts-->
+
+        <div class="post_section">
+            <div class="post_header">
+                <img src="images/ragnar2.jpg">
+                <div class="post_info">
+                    <h4>Ragnar Lothbrok</h4>
+                    <p>Data Scientist</p>
+                </div>
+            </div>
+            <div class="post_body">
+                <img src="images/post1.jpg">
+            </div>
+            <div class="feed_inputoption">
+                <div class="inputoption">
+                    <i class="material-icons">
+                        thumb_up
+                    </i>
+                    <h4>Like</h4>
+                </div>
+                <div class="inputoption">
+                    <i class="material-icons">
+                        comment
+                    </i>
+                    <h4>Comment</h4>
+                </div>
+                <div class="inputoption">
+                    <i class="material-icons">
+                        share
+                    </i>
+                    <h4>Share</h4>
+                </div>
+                <div class="inputoption">
+                    <i class="material-icons">
+                        send
+                    </i>
+                    <h4>Send</h4>
+                </div>
+            </div>
+        </div>
+        <div class="post_section">
+            <div class="post_header">
+                <i class="material-icons sidebar_topavatar">
+                    account_circle
+                </i>
+                <div class="post_info">
+                    <h4>Mubashira T</h4>
+                    <p>Job disciption</p>
+                </div>
+            </div>
+            <div class="post_body">
+                <p>Message Here</p>
+            </div>
+            <div class="feed_inputoption">
+                <div class="inputoption">
+                    <i class="material-icons">
+                        thumb_up
+                    </i>
+                    <h4>Like</h4>
+                </div>
+                <div class="inputoption">
+                    <i class="material-icons">
+                        comment
+                    </i>
+                    <h4>Comment</h4>
+                </div>
+                <div class="inputoption">
+                    <i class="material-icons">
+                        share
+                    </i>
+                    <h4>Share</h4>
+                </div>
+                <div class="inputoption">
+                    <i class="material-icons">
+                        send
+                    </i>
+                    <h4>Send</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="post_section">
+            <div class="post_header">
+                <i class="material-icons sidebar_topavatar">
+                    account_circle
+                </i>
+                <div class="post_info">
+                    <h4>Mubashira T</h4>
+                    <p>Job disciption</p>
+                </div>
+            </div>
+            <div class="post_body">
+                <p>Message Here</p>
+            </div>
+            <div class="feed_inputoption">
+                <div class="inputoption">
+                    <i class="material-icons">
+                        thumb_up
+                    </i>
+                    <h4>Like</h4>
+                </div>
+                <div class="inputoption">
+                    <i class="material-icons">
+                        comment
+                    </i>
+                    <h4>Comment</h4>
+                </div>
+                <div class="inputoption">
+                    <i class="material-icons">
+                        share
+                    </i>
+                    <h4>Share</h4>
+                </div>
+                <div class="inputoption">
+                    <i class="material-icons">
+                        send
+                    </i>
+                    <h4>Send</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="post_section">
+            <div class="post_header">
+                <i class="material-icons sidebar_topavatar">
+                    account_circle
+                </i>
+                <div class="post_info">
+                    <h4>Mubashira T</h4>
+                    <p>Job disciption</p>
+                </div>
+            </div>
+            <div class="post_body">
+                <p>Message Here</p>
+            </div>
+            <div class="feed_inputoption">
+                <div class="inputoption">
+                    <i class="material-icons">
+                        thumb_up
+                    </i>
+                    <h4>Like</h4>
+                </div>
+                <div class="inputoption">
+                    <i class="material-icons">
+                        comment
+                    </i>
+                    <h4>Comment</h4>
+                </div>
+                <div class="inputoption">
+                    <i class="material-icons">
+                        share
+                    </i>
+                    <h4>Share</h4>
+                </div>
+                <div class="inputoption">
+                    <i class="material-icons">
+                        send
+                    </i>
+                    <h4>Send</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="post_section">
+            <div class="post_header">
+                <i class="material-icons sidebar_topavatar">
+                    account_circle
+                </i>
+                <div class="post_info">
+                    <h4>Mubashira T</h4>
+                    <p>Job disciption</p>
+                </div>
+            </div>
+            <div class="post_body">
+                <p>Message Here</p>
+            </div>
+            <div class="feed_inputoption">
+                <div class="inputoption">
+                    <i class="material-icons">
+                        thumb_up
+                    </i>
+                    <h4>Like</h4>
+                </div>
+                <div class="input_option">
+                    <i class="material-icons">
+                        comment
+                    </i>
+                    <h4>Comment</h4>
+                </div>
+                <div class="inputoption">
+                    <i class="material-icons">
+                        share
+                    </i>
+                    <h4>Share</h4>
+                </div>
+                <div class="inputoption">
+                    <i class="material-icons">
+                        send
+                    </i>
+                    <h4>Send</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="post_section">
+            <div class="post_header">
+                <i class="material-icons sidebar_topavatar">
+                    account_circle
+                </i>
+                <div class="post_info">
+                    <h4>Mubashira T</h4>
+                    <p>Job disciption</p>
+                </div>
+            </div>
+            <div class="post_body">
+                <p>Message Here</p>
+            </div>
+            <div class="feed_inputoption">
+                <div class="inputoption">
+                    <i class="material-icons">
+                        thumb_up
+                    </i>
+                    <h4>Like</h4>
+                </div>
+                <div class="inputoption">
+                    <i class="material-icons">
+                        comment
+                    </i>
+                    <h4>Comment</h4>
+                </div>
+                <div class="inputoption">
+                    <i class="material-icons">
+                        share
+                    </i>
+                    <h4>Share</h4>
+                </div>
+                <div class="inputoption">
+                    <i class="material-icons">
+                        send
+                    </i>
+                    <h4>Send</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--post ends-->
+<!--feed ends-->
+
+    <!--widgetstarts-->
+    <div class="widget">
+        <div class="widget_header">
+            <h2>LinkedIn News</h2>
+            <i class="material-icons">
+                info
+            </i>
+        </div>
+        <div class="widget_article">
+            <div class="widget_articleleft">
+                <i class="material-icons">
+                    radio_button_checked
+                </i>
+            </div>
+            <div class="widget_articleright">
+                <h4>How to go from engineer to CTO</h4>
+                <p>13h ago.1056 readers</p>
+            </div>
+        </div>
+        <div class="widget_article">
+            <div class="widget_articleleft">
+                <i class="material-icons">
+                    radio_button_checked
+                </i>
+            </div>
+            <div class="widget_articleright">
+                <h4>Apple reveals latest iphones,ipads</h4>
+                <p>21h ago.1724 readers</p>
+            </div>
+        </div> <div class="widget_article">
+            <div class="widget_articleleft">
+                <i class="material-icons">
+                    radio_button_checked
+                </i>
+            </div>
+            <div class="widget_articleright">
+                <h4>Its women only at olas mega plant</h4>
+                <p>2d ago.2870 readers</p>
+            </div>
+        </div> <div class="widget_article">
+            <div class="widget_articleleft">
+                <i class="material-icons">
+                    radio_button_checked
+                </i>
+            </div>
+            <div class="widget_articleright">
+                <h4>SpaceX launches civiliance to space</h4>
+                <p>4h ago.4556 readers</p>
+            </div>
+        </div> <div class="widget_article">
+            <div class="widget_articleleft">
+                <i class="material-icons">
+                    radio_button_checked
+                </i>
+            </div>
+            <div class="widget_articleright">
+                <h4>Does attittude trumb skill?</h4>
+                <p>2d ago.5690 readers</p>
+            </div>
+        </div>
+    </div>
+    <!--widget ends-->
+</div>
+<!--main body ends-->
+</body>
+</html>
